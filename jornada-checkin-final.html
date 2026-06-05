@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Passo registrado</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-j{background:#fffbfb}
+.jd-bg{position:absolute;left:-60px;top:-20px;width:520px;height:640px;opacity:.22;object-fit:contain;pointer-events:none;z-index:1}
+.j-top{position:absolute;left:0;top:0;width:100%;height:98px;background:#2c877d;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:5px;padding:5px 15px 6px;z-index:15}
+.j-top .back{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.j-top .back svg{width:16px;height:16px;stroke:#fff}
+.j-top .mid{flex:1;display:flex;flex-direction:column;gap:5px}
+.j-top .t1{font-family:var(--font);font-weight:600;font-size:16px;color:#fff}
+.j-top .t2{font-family:var(--font);font-size:14px;color:#fff}
+.j-top .t2 b{font-weight:700}
+.j-prog{position:relative;width:254px;height:7px;border-radius:50px;background:#c6e0dd;margin-top:1px}
+.j-prog i{position:absolute;left:0;top:0;height:7px;width:130px;border-radius:50px;background:linear-gradient(90deg,#0d8482,#26b9ec)}
+.j-streak{display:flex;align-items:center;gap:8px;padding:7px 13px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.j-streak span{font-family:var(--font);font-weight:600;font-size:14px;color:#fff;letter-spacing:.28px}
+.j-streak svg{width:11px;height:13px}
+/* success card */
+.cf-card{position:absolute;left:0;right:0;bottom:60px;z-index:10;background:linear-gradient(165deg,#1d5a60 0%,#2e8278 100%);border-radius:32px 32px 0 0;padding:40px 28px 34px;display:flex;flex-direction:column;align-items:center;gap:18px;box-shadow:0 -10px 40px rgba(0,0,0,.18);overflow:hidden;animation:cfUp .55s var(--ease-card) both}
+@keyframes cfUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.cf-glow{position:absolute;left:50%;top:-30px;width:200px;height:200px;transform:translateX(-50%);border-radius:50%;background:rgba(20,184,166,.25);filter:blur(40px);pointer-events:none}
+.cf-card>.cf-check,.cf-card>.cf-title,.cf-card>.cf-sub,.cf-card>.cf-btn{position:relative;z-index:2}
+.cf-check{width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(255,255,255,.06),0 0 30px rgba(45,212,191,.5);animation:pop .5s var(--ease-spring) .15s both}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+.cf-check svg{width:40px;height:40px;stroke:#eafff8;stroke-width:2.4}
+.cf-title{font-family:var(--font);font-weight:700;font-size:24px;line-height:1.25;color:#fff;text-align:center}
+.cf-sub{font-family:var(--font);font-weight:400;font-size:14px;line-height:1.5;color:#cfe6e1;text-align:center;max-width:300px}
+.cf-btn{width:100%;height:51px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:linear-gradient(108deg,#0d8482,#26b9ec);font-family:var(--font);font-weight:600;font-size:16px;color:#fff;text-decoration:none;margin-top:6px}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#90c1a5}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#90c1a5;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-j">
+<img class="jd-bg" src="assets/jornada-face.png" alt=""/>
+<div class="j-top">
+  <a class="back" href="jornada-checkin-influencia.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <div class="mid">
+    <p class="t1">Sua jornada</p>
+    <p class="t2">Capítulo atual: <b>Nomear</b></p>
+    <div class="j-prog"><i></i></div>
+  </div>
+  <div class="j-streak"><span>1</span><svg viewBox="0 0 24 24" fill="#ffb020"><path d="M12 2c1 3-1 4-2 6s0 4 2 4 3-2 2-5c2 1 4 4 4 7a6 6 0 0 1-12 0c0-3 2-5 3-7 1 2 2 2 3 1-1-2-3-3-3-6z"/></svg></div>
+</div>
+
+<div class="cf-card">
+  <div class="cf-glow"></div>
+  <div class="cf-check"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></div>
+  <p class="cf-title">Você registrou seu<br>passo emocional.</p>
+  <p class="cf-sub">Cada vez que você percebe, algo silencioso muda dentro.</p>
+  <a href="jornada.html" class="cf-btn">Voltar a jornada</a>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+</div></body></html>

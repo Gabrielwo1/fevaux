@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Sentimento</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-home{background:linear-gradient(-9deg,#e6efef 3%,#e4eeef 98%)}
+.mi-backdrop{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.39),rgba(42,50,49,.48));backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);z-index:5}
+.mi-sheet{position:absolute;left:0;right:0;bottom:72px;z-index:10;max-height:calc(100% - 88px);overflow-y:auto;background:#f3f6f8;border:1px solid #94a3b8;border-bottom:none;border-radius:24px 24px 0 0;padding:21px 21px 20px;display:flex;flex-direction:column;gap:20px;box-shadow:0 -8px 30px rgba(0,0,0,.12);animation:sheetUp .5s var(--ease-card) both}
+.mi-sheet::-webkit-scrollbar{display:none}
+@keyframes sheetUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.mi-top{display:flex;align-items:center;justify-content:space-between}
+.mi-top .lbl{font-family:var(--font);font-weight:600;font-size:14px;color:#013b3f}
+.mi-top .cancel{font-family:var(--font);font-weight:400;font-size:14px;color:#013b3f;text-decoration:none}
+.mi-head{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.mi-big{font-family:var(--font);font-weight:700;font-size:32px;line-height:38px;letter-spacing:.64px;color:#00383d}
+.mi-sub{font-family:var(--font);font-weight:400;font-size:16px;line-height:1.3;color:#555}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:9999px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(to bottom,rgba(29,90,96,.08),rgba(84,158,150,.08));cursor:pointer;transition:transform .15s var(--ease-card)}
+.chip svg{width:17px;height:17px;stroke:#1d5a60;flex-shrink:0}
+.chip span{font-family:var(--font);font-weight:500;font-size:14px;color:#1d5a60;letter-spacing:.14px}
+.chip:active{transform:scale(.96)}
+.chip.active{background:linear-gradient(to bottom,#1d5a60,#549e96);border-color:rgba(255,255,255,.1)}
+.chip.active svg{stroke:#fff}
+.chip.active span{color:#fff}
+.mi-cta{display:flex;align-items:center;justify-content:center;height:51px;border-radius:15px;background:var(--grad-primary);font-family:var(--font);font-weight:600;font-size:16px;color:#fff;text-decoration:none}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#80b7b0}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#80b7b0;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-home">
+<div class="mi-backdrop"></div>
+<div class="mi-sheet">
+  <div class="mi-top"><span class="lbl">Emoção</span><a href="dashboard.html" class="cancel">Cancelar</a></div>
+  <div class="mi-head">
+    <p class="mi-big">Intenso</p>
+    <p class="mi-sub">O que descreve melhor esse sentimento?</p>
+  </div>
+  <div class="chips" data-multi>
+    <button class="chip active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg><span>Cansaço</span></button>
+    <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9Z"/></svg><span>Irritação</span></button>
+    <button class="chip active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg><span>Tristeza</span></button>
+    <button class="chip active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a2.5 2.5 0 1 0-2.5-2.5"/><path d="M3 12h15a2.5 2.5 0 1 1-2.5 2.5"/><path d="M3 16h8a2 2 0 1 1-2 2"/></svg><span>Ansiedade</span></button>
+    <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20c-4 0-7-3-7-7 0-1.5.4-2.6 1.2-3.8C7 6 11 5 18 4c-.3 6-1.2 10-4 12.5C12.6 17.8 11 18 9.5 18"/><path d="M5 19c2.5-5 6-8 11-10"/></svg><span>Tranquilidade</span></button>
+  </div>
+  <a href="modal-influencia.html" class="mi-cta">Continuar</a>
+</div>
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Inicio</span></a>
+  <a href="jornada.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+<script>
+document.querySelectorAll('.chips[data-multi] .chip').forEach(function(c){
+  c.addEventListener('click',function(){ c.classList.toggle('active'); });
+});
+</script>
+</div></body></html>

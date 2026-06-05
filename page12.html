@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – É hora de mudar</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-soft{background:#f6f6f5}
+.p12-bg{position:absolute;left:-315px;top:-341px;width:1024px;height:1535px;opacity:.11;object-fit:cover;pointer-events:none;z-index:1}
+.p12-dot{position:absolute;border-radius:50%;background:#442952;opacity:.1;z-index:2}
+.p12-wrap{position:absolute;left:19px;top:124px;width:352px;display:flex;flex-direction:column;gap:18px;z-index:10}
+.p12-title{font-family:var(--font);font-weight:700;font-size:24px;line-height:32px;color:#023e44}
+.p12-title .green{color:#13919d}
+.toggle{display:inline-block;width:23px;height:6px;border-radius:9999px;background:linear-gradient(90deg,#0d8482,#2e8278);flex-shrink:0}
+.toggle.light{background:rgba(255,255,255,.85)}
+.cmp-card{position:relative;border-radius:24px;padding:21px;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.cmp-antes{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);box-shadow:0 8px 32px rgba(15,82,56,.04)}
+.cmp-antes .temas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;z-index:0;pointer-events:none}
+.cmp-antes > *{position:relative;z-index:1}
+.cmp-label{display:flex;align-items:center;gap:8px;font-family:var(--font);font-weight:700;font-size:16px;color:#023e44}
+.cmp-desc{font-family:var(--font);font-weight:400;font-size:14px;line-height:24px;color:#555}
+.cmp-item{display:flex;align-items:center;gap:8px;font-family:var(--font);font-weight:400;font-size:14px;line-height:16.5px;color:#555}
+.cmp-item svg{flex-shrink:0}
+.cmp-depois{background:linear-gradient(180deg,#1d5a60,#549e96);border:1px solid rgba(255,255,255,.05);box-shadow:0 8px 32px rgba(15,82,56,.08)}
+.cmp-depois .glow{position:absolute;right:-64px;top:-64px;width:128px;height:128px;border-radius:9999px;background:rgba(37,202,162,.33);filter:blur(25px);z-index:0}
+.cmp-depois .sun{position:absolute;left:148px;top:12px;width:309px;height:309px;object-fit:contain;object-position:bottom;pointer-events:none;z-index:0}
+.cmp-depois > *{position:relative;z-index:1}
+.cmp-depois .cmp-label,.cmp-depois .cmp-desc,.cmp-depois .cmp-item{color:#fff}
+</style></head><body><div class="shell shell-soft">
+<img class="p12-bg" src="assets/p12-bg.png" alt=""/>
+<div class="p12-dot" style="left:39px;top:754px;width:23px;height:23px"></div>
+<div class="p12-dot" style="left:64px;top:817px;width:14px;height:14px"></div>
+<div class="p12-dot" style="left:32px;top:466px;width:14px;height:14px"></div>
+<div class="prog-bg"></div><div class="prog-fill" style="width:290px"></div>
+<div class="topbar"><span class="etapa">Etapa 15</span><a href="page11.html" class="back-btn"><img src="assets/back-icon.svg" alt=""/></a></div>
+<div class="p12-wrap anim-up d1">
+  <p class="p12-title">É hora de fazer <span class="green">a mudança!</span></p>
+  <div class="cmp-card cmp-antes">
+    <img class="temas" src="assets/p12-temas.png" alt=""/>
+    <div class="cmp-label"><span class="toggle"></span>Antes</div>
+    <p class="cmp-desc">Explore conteúdos organizados pelo tema que faz mais sentido para você agora.</p>
+    <div class="cmp-item"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l8 8M13 5l-8 8"/></svg>Emoções sem nome</div>
+    <div class="cmp-item"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l8 8M13 5l-8 8"/></svg>Reações automáticas</div>
+    <div class="cmp-item"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l8 8M13 5l-8 8"/></svg>Ciclos que se repetem</div>
+    <div class="cmp-item"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l8 8M13 5l-8 8"/></svg>Exaustão interna</div>
+  </div>
+  <div class="cmp-card cmp-depois">
+    <div class="glow"></div>
+    <img class="sun" src="assets/p12-sun.png" alt=""/>
+    <div class="cmp-label"><span class="toggle light"></span>Depois</div>
+    <p class="cmp-desc">Recursos rápidos para regular o corpo e a mente em momentos de crise.</p>
+    <div class="cmp-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg>Literacia emocional</div>
+    <div class="cmp-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg>Respostas conscientes</div>
+    <div class="cmp-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg>Padrões transformados</div>
+    <div class="cmp-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg>Energia renovada</div>
+  </div>
+</div>
+<div class="btn-wrap"><a href="page13.html" class="btn"><span>Continuar</span><img class="arr" src="assets/arrow.svg" alt=""/></a></div>
+</div></body></html>

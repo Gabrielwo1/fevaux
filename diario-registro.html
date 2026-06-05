@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Novo registro</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-c{background:linear-gradient(180deg,#eaf4f1,#f6faf8)}
+.c-blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(2px)}
+.d-top{position:absolute;left:0;top:0;width:100%;height:62px;display:flex;align-items:center;justify-content:center;padding:0 16px;z-index:15;background:linear-gradient(180deg,#eaf4f1,rgba(234,244,241,0))}
+.d-top .back{position:absolute;left:12px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.d-top .back svg{width:18px;height:18px;stroke:#023e44}
+.d-top .ttl{font-family:var(--font);font-weight:600;font-size:17px;color:#023e44}
+.d-top .add{position:absolute;right:14px;width:40px;height:40px;border-radius:50%;background:#2e8278;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 14px rgba(46,130,120,.35)}
+.d-top .add svg{width:18px;height:18px;stroke:#fff}
+.r-scroll{position:absolute;left:0;right:0;top:62px;bottom:84px;overflow-y:auto;padding:8px 21px 22px;display:flex;flex-direction:column;gap:10px;z-index:5}
+.r-scroll::-webkit-scrollbar{display:none}
+.f-label{font-family:var(--font);font-weight:700;font-size:18px;color:#023e44;margin-top:12px}
+.f-help{font-family:var(--font);font-weight:400;font-size:13px;line-height:1.4;color:#6b7c80;margin:2px 0}
+.f-area{width:100%;min-height:80px;border-radius:14px;border:1px solid #d9e3e0;background:rgba(255,255,255,.7);padding:14px;font-family:var(--font);font-size:14px;color:#374151;resize:none;outline:none;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.f-area::placeholder{color:#9ca3af}
+.f-area:focus{border-color:#2e8278}
+.f-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.f-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 16px;border-radius:9999px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(to bottom,rgba(29,90,96,.08),rgba(84,158,150,.08));cursor:pointer;transition:transform .15s var(--ease-card)}
+.f-chip svg{width:15px;height:15px;stroke:#1d5a60}
+.f-chip span{font-family:var(--font);font-weight:500;font-size:14px;color:#1d5a60}
+.f-chip:active{transform:scale(.96)}
+.f-chip.active{background:linear-gradient(to bottom,#1d5a60,#549e96);border-color:rgba(255,255,255,.1)}
+.f-chip.active svg{stroke:#fff}
+.f-chip.active span{color:#fff}
+/* slider */
+.f-slwrap{margin-top:10px;display:flex;flex-direction:column;gap:14px}
+.f-ends{display:flex;justify-content:space-between;font-family:var(--font);font-weight:400;font-size:12px;color:#6b7c80}
+.f-slval{text-align:center;font-family:var(--font);font-weight:700;font-size:28px;line-height:34px;color:#00383d;transition:opacity .2s,transform .25s var(--ease-card)}
+.f-slider{position:relative;height:24px;display:flex;align-items:center}
+.f-track{position:absolute;left:0;right:0;height:4px;border-radius:9999px;background:#dfe6e4}
+.f-fill{position:absolute;left:0;height:4px;border-radius:9999px;background:linear-gradient(90deg,#9ad,#2fd9f4);width:50%}
+.f-thumb{position:absolute;width:24px;height:24px;margin-left:-12px;border-radius:12px;background:#00383d;box-shadow:0 0 12px rgba(47,217,244,.5);left:50%;pointer-events:none}
+.f-range{position:absolute;left:0;width:100%;height:24px;margin:0;opacity:0;cursor:pointer;-webkit-appearance:none;appearance:none}
+.d-btn{display:flex;align-items:center;justify-content:center;height:52px;border-radius:15px;background:var(--grad-primary);font-family:var(--font);font-weight:600;font-size:16px;color:#fff;text-decoration:none;margin-top:18px;box-shadow:0 10px 24px rgba(0,98,74,.22)}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#90c1a5}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#90c1a5;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-c">
+<div class="c-blob" style="right:-30px;top:40px;width:140px;height:140px;background:rgba(150,200,220,.25)"></div>
+<div class="d-top">
+  <a class="back" href="diario-modo.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <span class="ttl">Novo registro</span>
+  <a class="add" href="#"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></a>
+</div>
+<div class="r-scroll">
+  <p class="f-label" style="margin-top:0">Situação</p>
+  <textarea class="f-area" placeholder="Descreva brevemente a situação."></textarea>
+
+  <p class="f-label">O que passou na sua cabeça na hora?</p>
+  <p class="f-help">Descreva uma frase rápida que veio na hora, antes de você filtrar</p>
+  <textarea class="f-area" placeholder="Descreva brevemente a situação."></textarea>
+
+  <div class="f-chips" data-multi>
+    <button class="f-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg><span>Cansaço</span></button>
+    <button class="f-chip active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9Z"/></svg><span>Irritação</span></button>
+    <button class="f-chip active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg><span>Tristeza</span></button>
+    <button class="f-chip active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a2.5 2.5 0 1 0-2.5-2.5"/><path d="M3 12h15a2.5 2.5 0 1 1-2.5 2.5"/><path d="M3 16h8a2 2 0 1 1-2 2"/></svg><span>Ansiedade</span></button>
+    <button class="f-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20c-4 0-7-3-7-7 0-1.5.4-2.6 1.2-3.8C7 6 11 5 18 4c-.3 6-1.2 10-4 12.5C12.6 17.8 11 18 9.5 18"/></svg><span>Tranquilidade</span></button>
+  </div>
+
+  <div class="f-slwrap">
+    <div class="f-ends"><span>Muito agradável</span><span>Muito desagradável</span></div>
+    <p class="f-slval" id="slval">Neutro</p>
+    <div class="f-slider">
+      <div class="f-track"></div>
+      <div class="f-fill" id="slfill"></div>
+      <div class="f-thumb" id="slthumb"></div>
+      <input class="f-range" id="slrange" type="range" min="0" max="100" step="1" value="50" aria-label="Intensidade emocional"/>
+    </div>
+  </div>
+
+  <p class="f-label">Uma forma mais justa de ver isso</p>
+  <textarea class="f-area" placeholder="Descreva brevemente a situação."></textarea>
+
+  <a href="diario.html" class="d-btn">Fazer primeiro registro</a>
+</div>
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+<script>
+document.querySelectorAll('.f-chips[data-multi] .f-chip').forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('active');});});
+(function(){
+  var r=document.getElementById('slrange'),f=document.getElementById('slfill'),t=document.getElementById('slthumb'),v=document.getElementById('slval'),last='';
+  function lbl(x){if(x<=33)return'Agradável';if(x<=66)return'Neutro';return'Desagradável';}
+  function up(){var x=parseInt(r.value,10);f.style.width=x+'%';t.style.left=x+'%';var l=lbl(x);if(l!==last){last=l;v.style.opacity='0';v.style.transform='translateY(6px)';setTimeout(function(){v.textContent=l;v.style.opacity='1';v.style.transform='translateY(0)';},120);}}
+  r.addEventListener('input',up);up();
+})();
+</script>
+</div></body></html>

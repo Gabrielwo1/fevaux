@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Fase Nomear</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-j{background:#fffbfb}
+.jd-bg{position:absolute;left:-60px;top:-60px;width:520px;height:740px;opacity:.15;object-fit:contain;pointer-events:none;z-index:1}
+/* topbar */
+.j-top{position:absolute;left:0;top:0;width:100%;height:98px;background:#2c877d;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:5px;padding:5px 15px 6px;z-index:15}
+.j-top .back{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.j-top .back svg{width:16px;height:16px;stroke:#fff}
+.j-top .mid{flex:1;display:flex;flex-direction:column;gap:5px}
+.j-top .t1{font-family:var(--font);font-weight:600;font-size:16px;color:#fff}
+.j-top .t2{font-family:var(--font);font-size:14px;color:#fff}
+.j-top .t2 b{font-weight:700}
+.j-prog{position:relative;width:254px;height:7px;border-radius:50px;background:#c6e0dd;margin-top:1px}
+.j-prog i{position:absolute;left:0;top:0;height:7px;width:39px;border-radius:50px;background:linear-gradient(90deg,#0d8482,#26b9ec)}
+.j-streak{display:flex;align-items:center;gap:8px;padding:7px 13px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.j-streak span{font-family:var(--font);font-weight:600;font-size:14px;color:#fff;letter-spacing:.28px}
+.j-streak svg{width:11px;height:13px}
+/* detail card */
+.jd-card{position:absolute;left:0;right:0;top:170px;bottom:60px;z-index:10;overflow-y:auto;border:1px solid rgba(139,146,143,.25);border-radius:32px 32px 0 0;padding:21px;display:flex;flex-direction:column;gap:20px;background:linear-gradient(-40deg,rgba(2,113,97,.92) 20%,rgba(4,83,72,.95) 80%);box-shadow:0 25px 50px -12px rgba(0,0,0,.25);backdrop-filter:blur(8px)}
+.jd-card::-webkit-scrollbar{display:none}
+.jd-h{display:flex;gap:20px;align-items:flex-start}
+.jd-h .col{flex:1}
+.jd-eyebrow{font-family:var(--font);font-weight:700;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#fff}
+.jd-h1{font-family:var(--font);font-weight:800;font-size:24px;letter-spacing:-.96px;color:#fff;margin:2px 0}
+.jd-htext{font-family:var(--font);font-weight:400;font-size:14px;line-height:28px;color:#fff}
+.jd-x{width:16px;height:16px;flex-shrink:0;stroke:#fff;opacity:.8}
+.jd-sec{display:flex;flex-direction:column;gap:12px}
+.jd-objlbl{font-family:var(--font);font-weight:700;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#f59e0b}
+.jd-objtext{font-family:var(--font);font-weight:400;font-size:16px;line-height:24px;color:#fff}
+.jd-prow{display:flex;align-items:flex-end;justify-content:space-between}
+.jd-plbl{font-family:var(--font);font-weight:700;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#fff}
+.jd-pval{font-family:var(--font);font-weight:700;font-size:12px;letter-spacing:1.2px;color:#fff}
+.jd-ptrack{height:6px;border-radius:9999px;background:rgba(255,255,255,.1);position:relative}
+.jd-ptrack i{position:absolute;left:0;top:0;height:6px;border-radius:9999px;background:linear-gradient(90deg,#0d8482,#26b9ec)}
+.jd-list{display:flex;flex-direction:column;gap:16px;padding-top:8px}
+.jd-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:9px 17px;display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(10px)}
+.jd-irow{display:flex;align-items:center;gap:12px}
+.jd-irow .ico{width:18px;height:18px;flex-shrink:0;stroke:#fff}
+.jd-irow .lbl{flex:1;font-family:var(--font);font-weight:400;font-size:16px;line-height:24px;color:#fff}
+.jd-irow .cnt{font-family:var(--font);font-weight:700;font-size:12px;letter-spacing:1.2px;color:#fff;white-space:nowrap}
+.jd-mini{height:4px;border-radius:9999px;background:rgba(255,255,255,.1);position:relative}
+.jd-mini i{position:absolute;left:0;top:0;height:4px;border-radius:9999px;background:rgba(255,255,255,.55)}
+.jd-btns{display:flex;gap:20px}
+.jd-btn{flex:1;height:51px;border-radius:15px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font);font-weight:600;font-size:16px;color:#fff;text-decoration:none}
+.jd-btn svg{width:16px;height:16px;stroke:#fff;flex-shrink:0}
+.jd-btn.grad{background:linear-gradient(108deg,#00624a 0%,#00bbff 184%)}
+.jd-btn.dark{background:rgba(58,68,61,.64)}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#90c1a5}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#90c1a5;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-j">
+<img class="jd-bg" src="assets/jornada-face.png" alt=""/>
+
+<div class="j-top">
+  <a class="back" href="jornada-fase.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <div class="mid">
+    <p class="t1">Sua jornada</p>
+    <p class="t2">Capítulo atual: <b>Nomear</b></p>
+    <div class="j-prog"><i></i></div>
+  </div>
+  <div class="j-streak"><span>1</span><svg viewBox="0 0 24 24" fill="#ffb020"><path d="M12 2c1 3-1 4-2 6s0 4 2 4 3-2 2-5c2 1 4 4 4 7a6 6 0 0 1-12 0c0-3 2-5 3-7 1 2 2 2 3 1-1-2-3-3-3-6z"/></svg></div>
+</div>
+
+<div class="jd-card">
+  <div class="jd-h">
+    <div class="col">
+      <p class="jd-eyebrow">FASE 01 · DE 4</p>
+      <p class="jd-h1">Nomear</p>
+      <p class="jd-htext">Dar nome ao que você sente muda tudo.</p>
+    </div>
+    <a href="jornada-fase.html"><svg class="jd-x" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></a>
+  </div>
+
+  <div class="jd-sec">
+    <p class="jd-objlbl">Objetivo desta fase</p>
+    <p class="jd-objtext">Construir o hábito de notar e nomear o que você sente.</p>
+  </div>
+
+  <div class="jd-sec">
+    <div class="jd-prow"><span class="jd-plbl">Progresso da fase</span><span class="jd-pval">47%</span></div>
+    <div class="jd-ptrack"><i style="width:47%"></i></div>
+  </div>
+
+  <div class="jd-list">
+    <p class="jd-plbl">Como evoluir nesta fase</p>
+    <div class="jd-item">
+      <div class="jd-irow">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 3z"/><path d="M8 9h8M8 12h5"/></svg>
+        <span class="lbl">Check-ins emocionais</span><span class="cnt">2 / 5</span>
+      </div>
+      <div class="jd-mini"><i style="width:40%"></i></div>
+    </div>
+    <div class="jd-item">
+      <div class="jd-irow">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+        <span class="lbl">Reflexões registradas</span><span class="cnt">0 / 1</span>
+      </div>
+      <div class="jd-mini"><i style="width:0%"></i></div>
+    </div>
+    <div class="jd-item">
+      <div class="jd-irow">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 10 12l4 4 6-7"/><path d="M16 9h4v4"/></svg>
+        <span class="lbl">Padrões percebidos</span><span class="cnt">0 / 0</span>
+      </div>
+      <div class="jd-mini"><i style="width:0%"></i></div>
+    </div>
+    <div class="jd-item">
+      <div class="jd-irow">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg>
+        <span class="lbl">Consistência emocional</span><span class="cnt">14% / 30%</span>
+      </div>
+      <div class="jd-mini"><i style="width:47%"></i></div>
+    </div>
+  </div>
+
+  <div class="jd-btns">
+    <a href="jornada-checkin.html" class="jd-btn grad">Fazer Checkin <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></a>
+    <a href="#" class="jd-btn dark">Continuar <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="jd-btns">
+    <a href="jornada-reflexoes.html" class="jd-btn dark">Reflexões <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M9 9h6M9 13h5"/></svg></a>
+    <a href="jornada-padroes.html" class="jd-btn dark">Padrões <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 10 12l4 4 6-7"/><path d="M16 9h4v4"/></svg></a>
+  </div>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+</div></body></html>

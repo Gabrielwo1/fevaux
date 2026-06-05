@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 615 1143" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 18">
+<circle id="Ellipse 2" opacity="0.1" cx="469.5" cy="997.5" r="145.5" fill="var(--fill-0, #442952)"/>
+<circle id="Ellipse 6" opacity="0.2" cx="115.5" cy="732.5" r="52.5" fill="var(--fill-0, #442952)"/>
+<circle id="Ellipse 7" opacity="0.1" cx="528.5" cy="377.5" r="52.5" fill="var(--fill-0, #442952)"/>
+<circle id="Ellipse 3" opacity="0.1" cx="198.5" cy="879.5" r="11.5" fill="var(--fill-0, #442952)"/>
+<circle id="Ellipse 4" opacity="0.1" cx="219" cy="938" r="7" fill="var(--fill-0, #442952)"/>
+<path id="Vector" opacity="0.1" d="M166.745 301.542C170.885 294.197 172.88 285.761 171.626 277.315C169.664 264.096 161.112 252.296 162.197 238.564C163.891 217.163 179.083 198.953 196.712 186.703C214.34 174.453 234.673 166.759 253.473 156.396C272.274 146.033 290.352 131.979 298.502 112.12C306.652 92.2605 301.502 65.7905 282.678 55.4687C269.114 48.0318 252.59 50.3598 237.142 51.152C221.694 51.9441 203.925 49.8253 194.994 37.1964C196.625 40.7305 195.494 44.9247 192.306 47.1596L51.0246 146.211C49.0029 147.628 47.7207 149.894 47.6083 152.359C45.7583 192.825 55.5623 233.238 71.8021 270.395C78.786 286.373 87.645 302.008 100.948 313.282C112.658 323.206 130.995 327.337 145.358 321.033C154.227 317.14 161.934 310.076 166.745 301.542Z" fill="url(#paint0_linear_0_18)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_18" x1="241.568" y1="254.611" x2="124.025" y2="86.9524" gradientUnits="userSpaceOnUse">
+<stop stop-color="#26B9EC"/>
+<stop offset="1" stop-color="#2E8278"/>
+</linearGradient>
+</defs>
+</svg>

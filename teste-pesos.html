@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Etapa 12</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-light{background:#f7f7f9}
+.t-title{position:absolute;left:26px;top:100px;width:344px;font-family:var(--font);font-weight:600;font-size:22px;line-height:1.3;color:#023e44;z-index:5}
+.t-sub{position:absolute;left:26px;top:170px;width:344px;font-family:var(--font);font-weight:400;font-size:14px;color:#6b7c80;z-index:5}
+.t-grid{position:absolute;left:26px;right:26px;top:204px;bottom:118px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start;z-index:5}
+.t-grid::-webkit-scrollbar{display:none}
+.t-cell{position:relative;background:#fff;border:1.5px solid transparent;border-radius:18px;padding:16px;min-height:104px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:border-color .2s var(--ease-card),box-shadow .2s,transform .12s}
+.t-cell:active{transform:scale(.98)}
+.t-cell .ic{width:36px;height:36px;border-radius:9999px;background:#eef5f3;display:flex;align-items:center;justify-content:center}
+.t-cell .ic svg{width:19px;height:19px;stroke:#13919d}
+.t-cell .lbl{font-family:var(--font);font-weight:500;font-size:15px;line-height:1.3;color:#374151}
+.t-cell .badge{position:absolute;right:14px;top:14px;width:22px;height:22px;border-radius:9999px;background:#2e8278;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.6);transition:opacity .2s,transform .2s var(--ease-spring)}
+.t-cell .badge svg{width:13px;height:13px;stroke:#fff}
+.t-cell.sel{border-color:#2e8278;background:#f1f8f6;box-shadow:0 6px 18px rgba(46,130,120,.14)}
+.t-cell.sel .badge{opacity:1;transform:scale(1)}
+.btn.dis{filter:grayscale(.5);opacity:.55;pointer-events:none;box-shadow:none}
+</style></head><body><div class="shell shell-light">
+<div class="prog-bg"></div><div class="prog-fill" style="width:232px"></div>
+<div class="topbar"><span class="etapa">Etapa 12</span><a href="teste-ruminacao.html" class="back-btn"><img src="assets/back-icon.svg" alt=""/></a></div>
+<h1 class="t-title anim-up d1">O que está pesando sobre você ultimamente?</h1>
+<p class="t-sub anim-up d1">Selecione todas as opções aplicáveis</p>
+<div class="t-grid anim-up d2" data-multi>
+  <div class="t-cell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></span><span class="lbl">Trabalho e pressão</span><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></span></div>
+  <div class="t-cell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.2A4 4 0 0 1 12 7a4 4 0 0 1 7 3.8C19 15.7 12 20 12 20Z"/></svg></span><span class="lbl">Relacionamentos</span><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></span></div>
+  <div class="t-cell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg></span><span class="lbl">Solidão e isolamento</span><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></span></div>
+  <div class="t-cell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></span><span class="lbl">Mudanças de vida</span><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></span></div>
+  <div class="t-cell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9 9l6 6"/></svg></span><span class="lbl">Saúde e corpo</span><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></span></div>
+  <div class="t-cell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18"/><circle cx="17" cy="14.5" r="1.3"/></svg></span><span class="lbl">Finanças</span><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></span></div>
+  <div class="t-cell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a9 9 0 1 1 1 5"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></svg></span><span class="lbl">Trauma e passado</span><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></span></div>
+  <div class="t-cell"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7M12 17h.01"/></svg></span><span class="lbl">Não sei ao certo</span><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></span></div>
+</div>
+<div class="btn-wrap"><a href="page10.html" class="btn dis" id="cta"><span>Continuar</span><img class="arr" src="assets/arrow.svg" alt=""/></a></div>
+<script>
+(function(){var cta=document.getElementById('cta');var cells=document.querySelectorAll('.t-grid[data-multi] .t-cell');cells.forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('sel');var any=Array.prototype.some.call(cells,function(x){return x.classList.contains('sel')});cta.classList.toggle('dis',!any);})})})();
+</script>
+</div></body></html>

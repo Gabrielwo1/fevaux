@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Seus padrões</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-j{background:linear-gradient(180deg,#eaf4f0,#f6faf8)}
+.r-top{position:absolute;left:0;top:0;width:100%;height:60px;display:flex;align-items:center;justify-content:center;padding:0 15px;z-index:15}
+.r-top .back{position:absolute;left:12px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.r-top .back svg{width:18px;height:18px;stroke:#023e44}
+.r-top .ttl{font-family:var(--font);font-weight:600;font-size:16px;color:#023e44}
+.r-scroll{position:absolute;left:0;right:0;top:60px;bottom:72px;overflow-y:auto;padding:8px 21px 24px;display:flex;flex-direction:column;gap:18px}
+.r-scroll::-webkit-scrollbar{display:none}
+.r-marker{display:flex;align-items:center;gap:10px;font-family:var(--font);font-weight:700;font-size:18px;color:#13919d}
+.r-marker svg{width:20px;height:20px;stroke:#13919d}
+.r-sub{font-family:var(--font);font-weight:400;font-size:14px;color:#6b7c80;margin-top:-10px}
+/* insight card (teal) */
+.p-card{position:relative;border-radius:24px;padding:22px;background:linear-gradient(150deg,#1d5a60,#2e8278);box-shadow:0 12px 30px rgba(29,90,96,.28);overflow:hidden;display:flex;flex-direction:column;gap:14px}
+.p-card .glow{position:absolute;right:-50px;top:-50px;width:150px;height:150px;border-radius:50%;background:rgba(20,184,166,.25);filter:blur(34px);pointer-events:none}
+.p-card>*{position:relative;z-index:2}
+.p-icotitle{display:flex;align-items:center;gap:10px}
+.p-icotitle .ic{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.p-icotitle .ic svg{width:18px;height:18px;stroke:#eafff8}
+.p-ctitle{font-family:var(--font);font-weight:700;font-size:17px;color:#fff}
+.p-line{font-family:var(--font);font-weight:400;font-size:14px;line-height:21px;color:#d7ebe7}
+.p-line b{font-weight:700;color:#fff}
+.p-inbtn{display:flex;align-items:center;justify-content:center;gap:8px;height:46px;border-radius:13px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);font-family:var(--font);font-weight:600;font-size:15px;color:#fff;text-decoration:none;margin-top:2px}
+.p-inbtn svg{width:15px;height:15px;stroke:#fff}
+/* premium card */
+.pm-card{position:relative;border-radius:24px;padding:22px;background:#fff;border:1px solid #e6ecec;box-shadow:0 6px 20px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:12px}
+.pm-head{display:flex;align-items:center;gap:10px}
+.pm-head .ic{width:34px;height:34px;border-radius:10px;background:#eef5f3;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-head .ic svg{width:18px;height:18px;stroke:#13919d}
+.pm-title{font-family:var(--font);font-weight:700;font-size:17px;color:#023e44}
+.pm-text{font-family:var(--font);font-weight:400;font-size:14px;line-height:21px;color:#6b7c80}
+.pm-btn{display:flex;align-items:center;justify-content:center;height:48px;border-radius:13px;background:var(--grad-primary);font-family:var(--font);font-weight:600;font-size:15px;color:#fff;text-decoration:none;margin-top:2px}
+.pm-btn.ghost{background:linear-gradient(108deg,#0d8482,#26b9ec)}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#90c1a5}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#90c1a5;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-j">
+<div class="r-top">
+  <a class="back" href="jornada-detalhe.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <span class="ttl">Seus padrões</span>
+</div>
+<div class="r-scroll">
+  <div class="r-marker"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 10 12l4 4 6-7"/><path d="M16 9h4v4"/></svg>Seus padrões</div>
+  <p class="r-sub">Veja tudo o que você já registrou e percebeu</p>
+
+  <div class="p-card">
+    <div class="glow"></div>
+    <div class="p-icotitle">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.6L18 9.3l-4.3 1.7L12 15.6l-1.7-4.6L6 9.3l4.3-1.7z"/><path d="M18 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></div>
+      <span class="p-ctitle">Insights da semana</span>
+    </div>
+    <p class="p-line"><b>Tranquilo</b> apareceu com mais frequência</p>
+    <p class="p-line">Você tem estado tranquilo, poucos dias de tensão registrada sobrecarga</p>
+    <p class="p-line"><b>Quarta-feira</b> parece ser o dia mais intenso pra você</p>
+    <a href="#" class="p-inbtn">Explorar esse padrão <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+
+  <div class="pm-card">
+    <div class="pm-head">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <span class="pm-title">Recurso premium</span>
+    </div>
+    <p class="pm-text">Seu trial gratuito de 7 dias chega ao fim. Continue com a FEVA Plus para acessar seus padrões emocionais detalhados.</p>
+    <a href="modal-premium.html" class="pm-btn">Ver plano premium</a>
+  </div>
+
+  <div class="pm-card">
+    <div class="pm-head">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg></div>
+      <span class="pm-title">Continue sua jornada primeiro</span>
+    </div>
+    <p class="pm-text">Conforme você registra como se sente, novas sugestões personalizadas vão aparecer aqui.</p>
+    <a href="jornada.html" class="pm-btn ghost">Voltar à jornada</a>
+  </div>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+</div></body></html>

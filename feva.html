@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Conversar</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-c{background:linear-gradient(180deg,#eaf4f1,#f6faf8)}
+.c-blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(2px)}
+.c-top{position:absolute;left:0;top:0;width:100%;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:15}
+.c-top .back{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-left:-8px}
+.c-top .back svg{width:18px;height:18px;stroke:#023e44}
+.c-top .skip{font-family:var(--font);font-weight:600;font-size:15px;color:#13919d;text-decoration:none}
+.c-wrap{position:absolute;left:0;right:0;top:60px;bottom:72px;overflow-y:auto;padding:14px 24px 20px;display:flex;flex-direction:column;z-index:5}
+.c-wrap::-webkit-scrollbar{display:none}
+.c-marker{display:flex;align-items:center;gap:8px;font-family:var(--font);font-weight:700;font-size:14px;color:#2b877c;justify-content:center;margin-bottom:14px}
+.c-marker .ln{width:22px;height:6px;border-radius:9999px;background:linear-gradient(90deg,#0d8482,#2e8278)}
+.c-title{font-family:var(--font);font-weight:700;font-size:26px;line-height:1.25;color:#023e44;text-align:center;margin-bottom:24px}
+.c-list{display:flex;flex-direction:column;gap:22px}
+.c-item{display:flex;align-items:flex-start;gap:16px}
+.c-item .ico{width:36px;height:36px;border-radius:50%;background:rgba(19,145,157,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-item .ico svg{width:18px;height:18px;stroke:#13919d}
+.c-item p{font-family:var(--font);font-weight:400;font-size:15px;line-height:1.45;color:#3a4d4d}
+.c-btn{display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:16px;background:var(--grad-primary);font-family:var(--font);font-weight:600;font-size:16px;color:#fff;text-decoration:none;margin-top:auto;box-shadow:0 10px 24px rgba(0,98,74,.25)}
+.c-btn svg{width:16px;height:16px;stroke:#fff}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#90c1a5}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#90c1a5;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-c">
+<div class="c-blob" style="left:-40px;top:-30px;width:160px;height:160px;background:rgba(173,216,205,.4)"></div>
+<div class="c-blob" style="right:-30px;top:-40px;width:150px;height:150px;background:rgba(150,200,220,.35)"></div>
+
+<div class="c-top">
+  <a class="back" href="explorar.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <a class="skip" href="feva-chat.html">Pular</a>
+</div>
+
+<div class="c-wrap">
+  <div class="c-marker anim-up d1"><span class="ln"></span>Uma primeira conversa</div>
+  <h1 class="c-title anim-up d1">Enquanto a gente conversa, eu te ajudo a perceber:</h1>
+  <div class="c-list anim-up d2">
+    <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 1 4 10.5c-.6.6-1 1.2-1 2H9c0-.8-.4-1.4-1-2A6 6 0 0 1 12 3Z"/><path d="M9.5 18h5M10.5 21h3"/></svg></div><p>Como seus pensamentos influenciam o que você sente</p></div>
+    <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l2.3 4.7 5.2.8-3.8 3.7.9 5.2L12 16.6 7.4 18.4l.9-5.2L4.5 9.5l5.2-.8z"/></svg></div><p>Quais padrões podem estar se repetindo</p></div>
+    <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.2A4 4 0 0 1 12 7a4 4 0 0 1 7 3.8C19 15.7 12 20 12 20Z"/></svg></div><p>O que pode estar por trás da ansiedade ou da sobrecarga</p></div>
+    <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M5 8h14M7 8l-3 6a3 3 0 0 0 6 0zM17 8l-3 6a3 3 0 0 0 6 0z"/></svg></div><p>Como construir mais equilíbrio aos poucos</p></div>
+    <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg></div><p>Caminhos possíveis para se sentir melhor — no seu ritmo</p></div>
+  </div>
+  <a href="feva-ciencia.html" class="c-btn anim-up d3">Começar a conversar <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item active"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+</div></body></html>

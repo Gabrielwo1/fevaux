@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Intensidade Emocional</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-home{background:linear-gradient(-9deg,#e6efef 3%,#e4eeef 98%)}
+/* dimmed backdrop over dashboard */
+.mi-backdrop{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.39),rgba(42,50,49,.48));backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);z-index:5}
+/* bottom sheet */
+.mi-sheet{position:absolute;left:0;right:0;bottom:72px;z-index:10;background:#f3f6f8;border:1px solid #94a3b8;border-bottom:none;border-radius:24px 24px 0 0;padding:21px 21px 20px;display:flex;flex-direction:column;gap:22px;box-shadow:0 -8px 30px rgba(0,0,0,.12);animation:sheetUp .5s var(--ease-card) both}
+@keyframes sheetUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.mi-top{display:flex;align-items:center;justify-content:space-between}
+.mi-top .lbl{font-family:var(--font);font-weight:600;font-size:14px;color:#013b3f}
+.mi-top .cancel{font-family:var(--font);font-weight:400;font-size:14px;color:#013b3f;text-decoration:none}
+.mi-head{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.mi-title{font-family:var(--font);font-weight:600;font-size:22px;line-height:1.178;color:#00383d}
+.mi-sub{font-family:var(--font);font-weight:400;font-size:16px;line-height:1.178;color:#555}
+.mi-wave{width:100%;height:200px;opacity:.85}
+.mi-wave svg{width:100%;height:100%;display:block;overflow:visible}
+.mi-slider-wrap{display:flex;flex-direction:column;gap:18px}
+.mi-ends{display:flex;justify-content:space-between;font-family:var(--font);font-weight:400;font-size:12px;color:rgba(1,59,63,.88)}
+.mi-ends .r{text-align:right}
+.mi-value{text-align:center;font-family:var(--font);font-weight:700;font-size:32px;line-height:38px;letter-spacing:.64px;color:#00383d;transition:opacity .2s ease,transform .25s var(--ease-card)}
+.mi-slider{position:relative;height:24px;display:flex;align-items:center}
+.mi-track{position:absolute;left:0;right:0;height:4px;border-radius:9999px;background:rgba(7,7,7,.1)}
+.mi-grad{position:absolute;left:0;height:4px;border-radius:9999px;background:linear-gradient(90deg,rgba(192,193,255,0),rgba(192,193,255,.5),rgba(47,217,244,.8));pointer-events:none}
+.mi-thumb{position:absolute;width:24px;height:24px;margin-left:-12px;border-radius:12px;background:#00383d;box-shadow:0 0 15px rgba(47,217,244,.6);left:75%;pointer-events:none}
+.mi-range{position:absolute;left:0;width:100%;height:24px;margin:0;opacity:0;cursor:pointer;-webkit-appearance:none;appearance:none}
+.mi-cta{display:flex;align-items:center;justify-content:center;height:51px;border-radius:15px;background:var(--grad-primary);font-family:var(--font);font-weight:600;font-size:16px;color:#fff;text-decoration:none}
+/* fixed teal nav */
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#80b7b0}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#80b7b0;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-home">
+<div class="mi-backdrop"></div>
+
+<div class="mi-sheet">
+  <div class="mi-top">
+    <span class="lbl">Emoção</span>
+    <a href="dashboard.html" class="cancel">Cancelar</a>
+  </div>
+  <div class="mi-head">
+    <p class="mi-title">Intensidade Emocional</p>
+    <p class="mi-sub">Como você descreveria sua energia agora?</p>
+  </div>
+
+  <div class="mi-wave">
+    <svg id="waveSvg" viewBox="0 0 348 200" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wgA" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#c0b8ff"/><stop offset="1" stop-color="#2fd9f4"/>
+        </linearGradient>
+        <linearGradient id="wgB" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#d9b8ff"/><stop offset="1" stop-color="#7fd4ff"/>
+        </linearGradient>
+      </defs>
+      <path class="wline" data-w="1.0" data-y="100" stroke="url(#wgA)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path class="wline" data-w="0.55" data-y="78" stroke="url(#wgB)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path class="wline" data-w="0.55" data-y="122" stroke="url(#wgB)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path class="wline" data-w="0.32" data-y="58" stroke="#c0b8ff" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".7"/>
+      <path class="wline" data-w="0.32" data-y="142" stroke="#bfeaf0" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".7"/>
+    </svg>
+  </div>
+
+  <div class="mi-slider-wrap">
+    <div class="mi-ends"><span>Muito agradável</span><span class="r">Muito desagradável</span></div>
+    <p class="mi-value" id="miValue">Intenso</p>
+    <div class="mi-slider">
+      <div class="mi-track"></div>
+      <div class="mi-grad" id="miGrad"></div>
+      <div class="mi-thumb" id="miThumb"></div>
+      <input class="mi-range" id="miRange" type="range" min="0" max="100" step="1" value="75" aria-label="Intensidade emocional"/>
+    </div>
+  </div>
+
+  <a href="modal-sentimento.html" class="mi-cta">Continuar</a>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Inicio</span></a>
+  <a href="jornada.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+
+<script>
+(function(){
+  var range = document.getElementById('miRange');
+  var grad  = document.getElementById('miGrad');
+  var thumb = document.getElementById('miThumb');
+  var label = document.getElementById('miValue');
+  var lines = Array.prototype.slice.call(document.querySelectorAll('.wline'));
+  var W = 348, SEG = 48;
+  var targetAmp = 0, curAmp = 0, phase = 0;
+
+  function labelFor(v){ if(v <= 33) return 'Leve'; if(v <= 66) return 'Neutro'; return 'Intenso'; }
+
+  function buildPath(weight, yMid){
+    var amp = curAmp * weight;
+    var d = '';
+    for(var i=0;i<=SEG;i++){
+      var x = i/SEG*W;
+      var y = yMid + Math.sin(i/SEG*Math.PI*3 + phase*weight) * amp
+                   + Math.sin(i/SEG*Math.PI*7 + phase*1.6) * amp*0.25;
+      d += (i===0?'M':'L') + x.toFixed(1) + ' ' + y.toFixed(1) + ' ';
+    }
+    return d;
+  }
+
+  function draw(){
+    curAmp += (targetAmp - curAmp) * 0.08;
+    phase += 0.03;
+    lines.forEach(function(p){
+      p.setAttribute('d', buildPath(parseFloat(p.dataset.w), parseFloat(p.dataset.y)));
+    });
+    requestAnimationFrame(draw);
+  }
+
+  var lastLabel = '';
+  function update(){
+    var v = parseInt(range.value,10);
+    grad.style.width = v + '%';
+    thumb.style.left = v + '%';
+    targetAmp = 4 + (v/100)*44;
+    var lt = labelFor(v);
+    if(lt !== lastLabel){
+      lastLabel = lt;
+      label.style.opacity = '0';
+      label.style.transform = 'translateY(6px)';
+      setTimeout(function(){
+        label.textContent = lt;
+        label.style.opacity = '1';
+        label.style.transform = 'translateY(0)';
+      }, 120);
+    }
+  }
+
+  range.addEventListener('input', update);
+  update();
+  requestAnimationFrame(draw);
+})();
+</script>
+</div></body></html>

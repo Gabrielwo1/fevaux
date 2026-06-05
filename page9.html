@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Intensidade</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-light{background:#f7f7f9}
+.p9-bg{position:absolute;left:-148px;top:-114px;width:615px;height:1143px;pointer-events:none;z-index:1}
+.p9-dot{position:absolute;width:14px;height:14px;border-radius:50%;background:#442952;opacity:.1;z-index:2}
+.p9-head{position:absolute;left:26px;top:121px;width:352px;display:flex;flex-direction:column;gap:16px;z-index:10}
+.p9-title{font-family:var(--font);font-weight:600;font-size:22px;line-height:1.178;color:#023e44}
+.p9-title .green{color:#13919d}
+.p9-sub{font-family:var(--font);font-weight:400;font-size:14px;line-height:20px;color:#555}
+/* boneco */
+.p9-face{position:absolute;left:50%;margin-left:-131px;top:270px;width:262px;height:262px;border-radius:442px;overflow:hidden;z-index:9}
+.p9-face img{position:absolute;inset:0;width:115%;height:115%;left:-7.5%;top:-7.5%;object-fit:contain;opacity:0;transform:scale(.92);transition:opacity .45s var(--ease-card),transform .45s var(--ease-card)}
+.p9-face img.show{opacity:1;transform:scale(1)}
+/* slider card */
+.p9-card{position:absolute;left:25px;top:556px;width:340px;display:flex;flex-direction:column;gap:16px;padding:25px;border-radius:24px;background:rgba(247,249,251,.8);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(224,227,229,.5);box-shadow:0 4px 20px rgba(0,0,0,.04);z-index:10}
+.p9-num{height:60px;display:flex;align-items:baseline;justify-content:center;gap:6px}
+.p9-num .val{font-family:var(--font);font-weight:700;font-size:48px;line-height:60px;color:#2e8278}
+.p9-num .max{font-family:var(--font);font-weight:400;font-size:18px;line-height:28px;color:#767684}
+.p9-slider{position:relative;width:100%;height:24px;display:flex;align-items:center}
+.p9-track{position:absolute;left:0;right:0;height:4px;border-radius:9999px;background:#e0e3e5}
+.p9-fill{position:absolute;left:0;height:4px;border-radius:9999px;background:#2e8278;width:50%;transition:width .15s ease}
+.p9-thumb{position:absolute;width:24px;height:24px;margin-left:-12px;border-radius:12px;background:#2e8278;box-shadow:0 4px 12px rgba(75,83,187,.4);left:50%;transition:left .15s ease;pointer-events:none}
+.p9-range{position:absolute;left:0;width:100%;height:24px;margin:0;opacity:0;cursor:pointer;-webkit-appearance:none;appearance:none}
+.p9-labels{display:flex;justify-content:space-between}
+.p9-labels span{font-family:var(--font);font-weight:500;font-size:14px;line-height:20px;color:#4f6262;letter-spacing:.14px}
+</style></head><body><div class="shell shell-light">
+<img class="p9-bg" src="assets/page8-bg.svg" alt=""/>
+<div class="p9-dot" style="left:32px;top:508px"></div>
+<div class="p9-dot" style="left:445px;top:153px"></div>
+<div class="prog-bg"></div><div class="prog-fill" style="width:135px"></div>
+<div class="topbar"><span class="etapa">Etapa 7</span><a href="page8.html" class="back-btn"><img src="assets/back-icon.svg" alt=""/></a></div>
+<div class="p9-head anim-up d1">
+  <p class="p9-title">Com que intensidade você costuma ruminar — <span class="green">revirar situações na cabeça?</span></p>
+  <p class="p9-sub">Estamos construindo seu perfil emocional.<br>Continue para refinarmos ainda mais.</p>
+</div>
+<div class="p9-face anim-up d2">
+  <img id="faceLow"  src="assets/face-low.png"  alt=""/>
+  <img id="faceMid"  src="assets/face-mid.png"  alt=""/>
+  <img id="faceHigh" src="assets/face-high.png" alt=""/>
+</div>
+<div class="p9-card anim-up d3">
+  <div class="p9-num"><span class="val" id="val">5</span><span class="max">/ 10</span></div>
+  <div class="p9-slider">
+    <div class="p9-track"></div>
+    <div class="p9-fill" id="fill"></div>
+    <div class="p9-thumb" id="thumb"></div>
+    <input class="p9-range" id="range" type="range" min="0" max="10" step="1" value="5" aria-label="Intensidade"/>
+  </div>
+  <div class="p9-labels"><span>0 — Quase nunca</span><span>10 — Sempre</span></div>
+</div>
+<div class="btn-wrap"><a href="teste-estresse.html" class="btn"><span>Continuar</span><img class="arr" src="assets/arrow.svg" alt=""/></a></div>
+<script>
+(function(){
+  var range = document.getElementById('range');
+  var val   = document.getElementById('val');
+  var fill  = document.getElementById('fill');
+  var thumb = document.getElementById('thumb');
+  var faces = {
+    low:  document.getElementById('faceLow'),
+    mid:  document.getElementById('faceMid'),
+    high: document.getElementById('faceHigh')
+  };
+  var currentRange = null;
+
+  function rangeFor(v){
+    if(v <= 3) return 'low';
+    if(v <= 6) return 'mid';
+    return 'high';
+  }
+
+  function showFace(key){
+    if(key === currentRange) return;
+    currentRange = key;
+    Object.keys(faces).forEach(function(k){
+      faces[k].classList.toggle('show', k === key);
+    });
+  }
+
+  function update(){
+    var v = parseInt(range.value, 10);
+    var pct = v / 10 * 100;
+    val.textContent = v;
+    fill.style.width = pct + '%';
+    thumb.style.left = pct + '%';
+    showFace(rangeFor(v));
+  }
+
+  range.addEventListener('input', update);
+  update();
+})();
+</script>
+</div></body></html>

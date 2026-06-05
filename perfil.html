@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Perfil</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-p{background:#f3f6f8}
+.p-scroll{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:96px;z-index:5}
+.p-scroll::-webkit-scrollbar{display:none}
+.p-header{position:relative;background:linear-gradient(to bottom,rgba(29,90,96,.85),rgba(84,158,150,.85));border-radius:0 0 40px 40px;padding:32px 24px 26px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.p-avatar{width:80px;height:80px;border-radius:50%;border:2px solid #fff;object-fit:cover}
+.p-name{font-family:var(--font);font-weight:700;font-size:24px;line-height:32px;color:#023e44}
+.p-badge{background:rgba(2,62,68,.3);padding:4px 12px;border-radius:9999px;font-family:var(--font);font-weight:500;font-size:12px;color:#023e44}
+.p-member{font-family:var(--font);font-weight:400;font-size:12px;color:#0a3c41}
+.p-col{padding:20px 16px 0;display:flex;flex-direction:column;gap:20px}
+/* stats */
+.p-stats{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:24px;padding:16px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-top:-44px;position:relative;z-index:2}
+.p-stat{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px}
+.p-stat .n{font-family:var(--font);font-weight:600;font-size:20px;line-height:28px;color:#023e44}
+.p-stat .l{font-family:var(--font);font-weight:600;font-size:10px;line-height:15px;letter-spacing:.25px;text-transform:uppercase;color:#6b7280}
+.p-div{width:1px;height:32px;background:#e5e7eb}
+/* section title */
+.p-sec{display:flex;align-items:center;gap:8px;font-family:var(--font);font-weight:600;font-size:22px;color:#023e44}
+.p-sec svg{width:26px;height:26px;stroke:#13919d}
+/* achievements */
+.ach-card{position:relative;background:linear-gradient(to bottom,#1d5a60,#549e96);border-radius:24px;padding:21px;overflow:hidden}
+.ach-card .glow{position:absolute;right:-64px;top:-64px;width:128px;height:128px;border-radius:50%;background:rgba(37,202,162,.33);filter:blur(25px);pointer-events:none}
+.ach-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ach{background:#ebf1ef;border-radius:16px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;min-height:80px;justify-content:center}
+.ach.locked{background:#f9fafb;opacity:.7}
+.ach .h{display:flex;align-items:center;gap:8px}
+.ach .h svg{width:15px;height:15px;stroke:#13919d;flex-shrink:0}
+.ach .h span{font-family:var(--font);font-weight:600;font-size:12px;line-height:16px;color:#023e44}
+.ach .d{font-family:var(--font);font-weight:400;font-size:10px;line-height:13px;color:#555}
+/* glass card */
+.glass{position:relative;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(45,106,79,.2);border-radius:24px;padding:21px;box-shadow:0 8px 32px rgba(15,82,56,.06)}
+.glass.over{overflow:hidden}
+.g-rowtop{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.g-ttl{font-family:var(--font);font-weight:700;font-size:16px;color:#023e44}
+.g-prem{background:rgba(2,62,68,.1);padding:2px 8px;border-radius:4px;font-family:var(--font);font-weight:700;font-size:9px;letter-spacing:.45px;text-transform:uppercase;color:#023e44;flex-shrink:0}
+.g-sub{font-family:var(--font);font-weight:400;font-size:15px;line-height:1.4;color:#555}
+.g-btn{display:flex;align-items:center;justify-content:center;gap:10px;height:51px;border-radius:15px;background:var(--grad-primary);font-family:var(--font);font-weight:600;font-size:16px;color:#fff;text-decoration:none;margin-top:14px}
+.g-btn svg{width:14px;height:14px;stroke:#fff}
+/* perfil emocional card */
+.pe-card{position:relative;background:linear-gradient(to bottom,rgba(29,90,96,.2),rgba(84,158,150,.2));border:1px solid rgba(15,82,56,.1);border-radius:28px;padding:24px 21px;overflow:hidden;box-shadow:0 8px 32px rgba(15,82,56,.04)}
+.pe-card .bg{position:absolute;left:-27px;top:-48px;width:396px;height:495px;opacity:.18;object-fit:contain;pointer-events:none}
+.pe-card>*{position:relative;z-index:2}
+.pe-text{font-family:var(--font);font-weight:500;font-size:16px;line-height:26px;color:#555;text-align:center;margin-bottom:18px}
+/* list row */
+.g-listrow{display:flex;align-items:center;gap:16px}
+.g-ico{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.g-ico.fill{background:rgba(2,62,68,.1);border:1px solid #f3f4f6}
+.g-ico.soft{background:#ebf1ef}
+.g-ico svg{width:22px;height:22px;stroke:#13919d}
+.g-lc{flex:1;display:flex;flex-direction:column;gap:4px}
+.g-lc .t{font-family:var(--font);font-weight:600;font-size:16px;color:#023e44}
+.g-lc .s{font-family:var(--font);font-weight:400;font-size:14px;color:#555}
+.g-chev{width:8px;height:14px;stroke:#9aa7a7;flex-shrink:0}
+/* privacy list */
+.priv{display:flex;flex-direction:column;gap:14px}
+.priv a{display:flex;align-items:center;justify-content:space-between;text-decoration:none}
+.priv a span{font-family:var(--font);font-weight:600;font-size:16px;color:#555}
+.priv a.danger span{color:#c0473f}
+.p-logout{text-align:center;font-family:var(--font);font-weight:600;font-size:16px;background:linear-gradient(to bottom,#1d5a60,#549e96);-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none;padding:8px 0 4px}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#80b7b0}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#80b7b0;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-p">
+<div class="p-scroll">
+  <div class="p-header">
+    <img class="p-avatar" src="assets/perfil-avatar.jpg" alt=""/>
+    <p class="p-name">João Vitor</p>
+    <span class="p-badge">Gratuito</span>
+    <p class="p-member">membro desde maio de 2026</p>
+  </div>
+
+  <div class="p-col">
+    <div class="p-stats">
+      <div class="p-stat"><span class="n">7</span><span class="l">Check-ins</span></div>
+      <div class="p-div"></div>
+      <div class="p-stat"><span class="n">0</span><span class="l">Sessões</span></div>
+      <div class="p-div"></div>
+      <div class="p-stat"><span class="n">3</span><span class="l">Sequência</span></div>
+      <div class="p-div"></div>
+      <div class="p-stat"><span class="n">7</span><span class="l">Dias</span></div>
+    </div>
+
+    <div class="p-sec"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3M9 14h6M10 20h4M12 14v6"/></svg>Conquistas</div>
+    <div class="ach-card">
+      <div class="glow"></div>
+      <div class="ach-grid">
+        <div class="ach"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM8 18c0-3 2-4 2-7M15 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM16 10c0 3-2 4-2 7"/></svg><span>Primeiro passo</span></div><p class="d">Completou onboarding</p></div>
+        <div class="ach"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-1 4-2 6s0 4 2 4 3-2 2-5c2 1 4 4 4 7a6 6 0 0 1-12 0c0-3 2-5 3-7 1 2 2 2 3 1-1-2-3-3-3-6z"/></svg><span>3 dias seguidos</span></div><p class="d">Streak de 3 dias</p></div>
+        <div class="ach"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-8-8"/><path d="m9 11 3 3 8-8"/></svg><span>7 check-ins</span></div><p class="d">Registrou 7 humores</p></div>
+        <div class="ach locked"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="#5b6a6a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l14 8-14 8z"/></svg><span style="color:rgba(2,62,68,.7)">Primeira sessão</span></div><p class="d" style="color:rgba(85,85,85,.7)">Completou 1 sessão</p></div>
+      </div>
+    </div>
+
+    <div class="glass">
+      <div class="g-rowtop">
+        <p class="g-ttl" style="max-width:220px">Relatorio do Meu Espelho Emocional</p>
+        <span class="g-prem">Premium</span>
+      </div>
+      <p class="g-sub">Padrões, gatilhos, crenças e próximos passos.</p>
+      <a href="modal-premium.html" class="g-btn">Ver planos <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="p-sec" style="font-size:22px"><span style="margin:0">Seu perfil emocional</span></div>
+    <div class="pe-card">
+      <img class="bg" src="assets/jornada-face.png" alt=""/>
+      <p class="pe-text">Seu perfil ainda está sendo construído. Continue fazendo seus check-ins para descobrir mais sobre você.</p>
+      <a href="#" class="g-btn" style="margin-top:0">Começar estudo <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="glass">
+      <div class="g-listrow">
+        <div class="g-lc"><span class="t">Informações pessoais</span><span class="s">João • demernorth.music@gmail.com</span></div>
+        <svg class="g-chev" viewBox="0 0 12 18" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l8 7-8 7"/></svg>
+      </div>
+    </div>
+
+    <div class="glass">
+      <div class="g-listrow" style="margin-bottom:18px">
+        <div class="g-ico fill"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-8 4 5 3-6 4 9"/><circle cx="12" cy="5" r="1.5"/></svg></div>
+        <div class="g-lc"><span class="t">Plano premium</span><span class="s">Desbloqueie relatórios, análises e conversas ilimitadas.</span></div>
+      </div>
+      <a href="modal-premium.html" class="g-btn" style="margin-top:0">Ver plano premium <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="glass">
+      <div class="g-listrow" style="margin-bottom:18px">
+        <div class="g-ico soft"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg></div>
+        <div class="g-lc"><span class="t">Notificações</span><span class="s">Lembretes gentis pela manhã e à noite</span></div>
+      </div>
+      <a href="#" class="g-btn" style="margin-top:0">Reativar</a>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <p class="p-sec" style="display:block">Privacidade e segurança</p>
+      <div class="priv">
+        <a href="privacidade.html"><span>Politica de privacidade</span><svg class="g-chev" viewBox="0 0 12 18" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l8 7-8 7"/></svg></a>
+        <a href="termos.html"><span>Termos de uso</span><svg class="g-chev" viewBox="0 0 12 18" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l8 7-8 7"/></svg></a>
+        <a href="feva.html"><span>Rever apresentação do FEVA</span><svg class="g-chev" viewBox="0 0 12 18" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l8 7-8 7"/></svg></a>
+        <a href="#" class="danger"><span>Excluir conta</span></a>
+      </div>
+    </div>
+
+    <a href="#" class="p-logout">Sair da conta</a>
+  </div>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+</div></body></html>

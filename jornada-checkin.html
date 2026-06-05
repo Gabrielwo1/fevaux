@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Check-in</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-j{background:#fffbfb}
+.jd-bg{position:absolute;left:-60px;top:-40px;width:520px;height:560px;opacity:.18;object-fit:contain;pointer-events:none;z-index:1}
+.j-top{position:absolute;left:0;top:0;width:100%;height:98px;background:#2c877d;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:5px;padding:5px 15px 6px;z-index:15}
+.j-top .back{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.j-top .back svg{width:16px;height:16px;stroke:#fff}
+.j-top .mid{flex:1;display:flex;flex-direction:column;gap:5px}
+.j-top .t1{font-family:var(--font);font-weight:600;font-size:16px;color:#fff}
+.j-top .t2{font-family:var(--font);font-size:14px;color:#fff}
+.j-top .t2 b{font-weight:700}
+.j-prog{position:relative;width:254px;height:7px;border-radius:50px;background:#c6e0dd;margin-top:1px}
+.j-prog i{position:absolute;left:0;top:0;height:7px;width:60px;border-radius:50px;background:linear-gradient(90deg,#0d8482,#26b9ec)}
+.j-streak{display:flex;align-items:center;gap:8px;padding:7px 13px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.j-streak span{font-family:var(--font);font-weight:600;font-size:14px;color:#fff;letter-spacing:.28px}
+.j-streak svg{width:11px;height:13px}
+/* panel */
+.ck-panel{position:absolute;left:0;right:0;top:150px;bottom:60px;z-index:10;background:linear-gradient(180deg,#e8f3ef,#f6faf8);border-radius:24px 24px 0 0;padding:24px 21px;display:flex;flex-direction:column;z-index:10;box-shadow:0 -6px 24px rgba(0,0,0,.06)}
+.ck-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.ck-eyebrow{font-family:var(--font);font-weight:400;font-size:14px;color:#4f6262;margin-bottom:4px}
+.ck-eyebrow b{font-weight:700;color:#13919d}
+.ck-title{font-family:var(--font);font-weight:700;font-size:22px;line-height:1.25;color:#023e44}
+.ck-sub{font-family:var(--font);font-weight:400;font-size:14px;color:#6b7c80;margin-top:6px}
+.ck-back{flex-shrink:0;width:20px;height:20px;stroke:#023e44;margin-top:4px}
+.ck-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;margin-top:18px;padding-bottom:8px}
+.ck-list::-webkit-scrollbar{display:none}
+.ck-item{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px solid transparent;border-radius:16px;padding:17px 20px;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:border-color .2s var(--ease-card),transform .12s}
+.ck-item:active{transform:scale(.99)}
+.ck-item span{font-family:var(--font);font-weight:500;font-size:16px;color:#1f2937}
+.ck-radio{width:22px;height:22px;border-radius:50%;border:2px solid #cfd8d8;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .2s}
+.ck-item.sel{border-color:#2e8278}
+.ck-item.sel .ck-radio{border-color:#13b3a6}
+.ck-item.sel .ck-radio::after{content:"";width:11px;height:11px;border-radius:50%;background:#13b3a6}
+.ck-cta{display:flex;align-items:center;justify-content:center;gap:10px;height:51px;border-radius:15px;background:var(--grad-primary);font-family:var(--font);font-weight:600;font-size:16px;color:#fff;text-decoration:none;margin-top:14px}
+.ck-cta svg{width:16px;height:16px;stroke:#fff}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#90c1a5}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#90c1a5;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-j">
+<img class="jd-bg" src="assets/jornada-face.png" alt=""/>
+<div class="j-top">
+  <a class="back" href="jornada-detalhe.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <div class="mid">
+    <p class="t1">Sua jornada</p>
+    <p class="t2">Capítulo atual: <b>Nomear</b></p>
+    <div class="j-prog"><i></i></div>
+  </div>
+  <div class="j-streak"><span>1</span><svg viewBox="0 0 24 24" fill="#ffb020"><path d="M12 2c1 3-1 4-2 6s0 4 2 4 3-2 2-5c2 1 4 4 4 7a6 6 0 0 1-12 0c0-3 2-5 3-7 1 2 2 2 3 1-1-2-3-3-3-6z"/></svg></div>
+</div>
+
+<div class="ck-panel">
+  <div class="ck-head">
+    <div>
+      <p class="ck-title">Como sua mente está chegando hoje?</p>
+      <p class="ck-sub">Escolha o que mais se aproxima</p>
+    </div>
+    <a href="jornada-detalhe.html"><svg class="ck-back" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  </div>
+  <div class="ck-list" data-single>
+    <div class="ck-item"><span>Ansiosa</span><div class="ck-radio"></div></div>
+    <div class="ck-item"><span>Cansada</span><div class="ck-radio"></div></div>
+    <div class="ck-item sel"><span>Sobrecarregada</span><div class="ck-radio"></div></div>
+    <div class="ck-item"><span>Confusa</span><div class="ck-radio"></div></div>
+    <div class="ck-item"><span>Tranquila</span><div class="ck-radio"></div></div>
+    <div class="ck-item"><span>No automático</span><div class="ck-radio"></div></div>
+  </div>
+  <a href="jornada-checkin-influencia.html" class="ck-cta">Continuar <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+<script>
+document.querySelectorAll('.ck-list[data-single] .ck-item').forEach(function(it,_,all){
+  it.addEventListener('click',function(){ all.forEach(function(x){x.classList.remove('sel');}); it.classList.add('sel'); });
+});
+</script>
+</div></body></html>

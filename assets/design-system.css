@@ -1,0 +1,174 @@
+/* ============================================================
+   FEVA — Design System
+   Tokens + componentes compartilhados por todas as páginas.
+   ============================================================ */
+
+/* ---- Design Tokens ---------------------------------------- */
+:root{
+  /* cores */
+  --color-bg:#F3F6F7;
+  --color-ink:#023e44;        /* títulos escuros */
+  --color-accent:#13919d;     /* teal — destaque onboarding */
+  --color-accent-soft:#2e8278;/* verde — destaque home */
+  --color-text:#555555;       /* corpo de texto */
+  --color-muted:#76898b;      /* legendas / "Etapa" */
+  --color-purple:#442952;     /* círculos decorativos */
+  --color-card-border:#e2e8f0;
+  --color-back-btn:#0e5c5b;
+  --color-progress-track:#c6e0dd;
+
+  /* gradientes */
+  --grad-primary:linear-gradient(124.71deg,rgb(0,98,74) .26%,rgb(0,187,255) 183.74%);
+  --grad-progress:linear-gradient(90deg,#0d8482,#26b9ec);
+  --grad-shell:linear-gradient(180deg,rgba(37,199,177,.05) 0%,rgba(0,101,110,.05) 48%,rgba(151,49,161,.05) 100%),#fff;
+
+  /* sombras */
+  --shadow-btn:0 6px 28px rgba(0,130,100,.3);
+  --shadow-btn-hover:0 12px 36px rgba(0,130,100,.45);
+  --shadow-card:0 4px 20px rgba(0,0,0,.04);
+  --shadow-card-hover:0 8px 28px rgba(13,132,130,.14);
+  --shadow-shell:0 0 0 1px rgba(0,0,0,.04),0 8px 32px rgba(0,0,0,.10),0 32px 80px rgba(2,62,68,.14),0 0 0 .5px rgba(255,255,255,.6) inset;
+
+  /* forma / tipografia */
+  --radius-btn:15px;
+  --radius-card:12px;
+  --font:'Poppins',sans-serif;
+  --shell-w:390px;
+  --shell-h:852px;
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --ease-card:cubic-bezier(.34,1.4,.64,1);
+}
+
+/* ---- Reset ------------------------------------------------ */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;
+  background:var(--color-bg);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  font-family:var(--font);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---- Shell (canvas fixo 390x852 — igual ao Figma) --------- */
+/* Altura fixa garante que conteúdo (px) e botão compartilhem  */
+/* o mesmo sistema de coordenadas: nada nunca sobrepõe o botão.*/
+/* margin-block:auto centraliza na vertical e permite rolar    */
+/* sem cortar quando a janela é menor que 852px.               */
+.shell{
+  position:relative;
+  width:var(--shell-w);
+  height:var(--shell-h);
+  overflow:hidden;
+  flex-shrink:0;
+  background:var(--grad-shell);
+  margin-block:auto;
+}
+
+/* ---- Botão primário -------------------------------------- */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;height:51px;border-radius:var(--radius-btn);
+  background-image:var(--grad-primary);
+  box-shadow:var(--shadow-btn);
+  text-decoration:none;
+  transition:transform .18s var(--ease-spring),box-shadow .18s ease,filter .18s ease;
+}
+.btn:hover{transform:translateY(-2px) scale(1.01);box-shadow:var(--shadow-btn-hover);filter:brightness(1.08)}
+.btn:active{transform:scale(.97);box-shadow:0 3px 12px rgba(0,130,100,.25);transition-duration:.1s}
+.btn span{font-family:var(--font);font-size:16px;font-weight:600;color:#fff}
+.btn .arr{width:6.17px;height:10px;flex-shrink:0;display:block}
+.btn-wrap{position:absolute;left:22px;top:766px;width:340px;z-index:20}
+
+/* ---- Botão voltar ---------------------------------------- */
+.back-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:var(--radius-btn);
+  background:var(--color-back-btn);border:none;cursor:pointer;text-decoration:none;flex-shrink:0;
+  transition:transform .15s,filter .15s;
+}
+.back-btn:hover{transform:scale(1.08);filter:brightness(1.15)}
+.back-btn:active{transform:scale(.93)}
+.back-btn img{width:24px;height:24px;display:block}
+
+/* ---- Barra de progresso ---------------------------------- */
+.prog-bg{position:absolute;left:26px;top:37px;width:348px;height:7px;border-radius:50px;background:var(--color-progress-track);z-index:10}
+.prog-fill{position:absolute;left:26px;top:37px;height:7px;border-radius:50px;background:var(--grad-progress);z-index:10}
+
+/* ---- Topbar (Etapa + voltar) ----------------------------- */
+.topbar{position:absolute;left:26px;top:57px;width:348px;display:flex;align-items:center;justify-content:space-between;z-index:10}
+.etapa{font-size:16px;font-weight:600;line-height:1.178;color:var(--color-muted)}
+
+/* ---- Cabeçalho de pergunta ------------------------------- */
+.content-area{position:absolute;left:18px;top:137px;width:355px;display:flex;flex-direction:column;gap:20px;z-index:10;opacity:0;animation:fadeUp .55s ease-out .1s both}
+.q-title{font-size:22px;font-weight:600;line-height:1.178;color:var(--color-ink)}
+.q-title .green{color:var(--color-accent)}
+.q-sub{font-size:14px;font-weight:400;line-height:1.5;color:var(--color-text)}
+
+/* ---- Cards de seleção (grade) ---------------------------- */
+.cards-row{display:flex;align-items:flex-start;justify-content:space-between}
+.col{display:flex;flex-direction:column;gap:20px;width:168px}
+.card{
+  display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;
+  padding:15px;background:rgba(255,255,255,.9);backdrop-filter:blur(4px);
+  border:1px solid var(--color-card-border);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-card);cursor:pointer;
+  transition:transform .2s var(--ease-card),box-shadow .2s,border-color .2s;
+  -webkit-tap-highlight-color:transparent;user-select:none;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card-hover);border-color:rgba(13,132,130,.3)}
+.card:active{transform:scale(.96);transition-duration:.1s}
+.card.selected{border-color:#0d8482;background:rgba(13,132,130,.06);box-shadow:0 4px 20px rgba(13,132,130,.18)}
+.icon-wrap{display:flex;align-items:center;justify-content:center;border-radius:9999px;width:48px;height:48px;flex-shrink:0}
+.card-img{width:20px;height:20px;display:block}
+.card-label{font-size:14px;font-weight:400;color:var(--color-text);text-align:center;line-height:1.5}
+
+/* ---- Cards de gênero (com ilustração) -------------------- */
+.card-gender{
+  display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:flex-end;
+  padding:15px;background:rgba(255,255,255,.9);backdrop-filter:blur(4px);
+  border:1px solid var(--color-card-border);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-card);cursor:pointer;overflow:hidden;position:relative;height:183px;
+  transition:transform .2s var(--ease-card),box-shadow .2s,border-color .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.card-gender:hover{transform:translateY(-3px);box-shadow:var(--shadow-card-hover);border-color:rgba(13,132,130,.3)}
+.card-gender:active{transform:scale(.96);transition-duration:.1s}
+.card-gender.selected{border-color:#0d8482;background:rgba(13,132,130,.08)}
+.gender-img{position:absolute;top:-50px;left:-10px;width:194px;height:291px;object-fit:cover;opacity:.5;pointer-events:none}
+.gender-img.flip{left:-31px;transform:scaleX(-1)}
+.gender-label{font-size:14px;font-weight:400;color:var(--color-text);text-align:center;position:relative;z-index:2}
+
+/* ---- Animações ------------------------------------------- */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Entrada padrão — aplicada igualmente em todas as páginas.   */
+/* Utilitário p/ blocos de conteúdo + escalonamento opcional.  */
+.anim-up{opacity:0;animation:fadeUp .55s ease-out both}
+.anim-in{opacity:0;animation:fadeIn .5s ease-out both}
+.d1{animation-delay:.10s}
+.d2{animation-delay:.22s}
+.d3{animation-delay:.34s}
+.d4{animation-delay:.46s}
+
+/* Elementos comuns a todas as telas entram automaticamente */
+.prog-bg,.prog-fill{opacity:0;animation:fadeIn .5s ease-out both}
+.topbar{opacity:0;animation:fadeIn .5s ease-out .05s both}
+.cards-row{opacity:0;animation:fadeUp .55s ease-out .25s both}
+.btn-wrap{opacity:0;animation:fadeUp .55s ease-out .45s both}
+
+/* ---- Desktop: sombra elegante na moldura ----------------- */
+@media (min-width:480px){
+  .shell{box-shadow:var(--shadow-shell);border-radius:2px}
+}
+
+/* ---- Mobile (<390px): escala a moldura inteira ----------- */
+/* zoom transforma o canvas 390x852 para caber na largura,     */
+/* mantendo proporções (largura e altura escalam juntas).      */
+@media (max-width:390px){
+  body{align-items:flex-start;overflow-x:hidden}
+  .shell{zoom:calc(100vw / 390);box-shadow:none;border-radius:0;margin-block:0}
+}

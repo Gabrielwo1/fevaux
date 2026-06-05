@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Fase da Jornada</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-j{background:#fffbfb}
+.j-bg{position:absolute;left:50%;top:90px;width:520px;height:760px;transform:translateX(-50%);object-fit:contain;pointer-events:none;z-index:1;opacity:0;transition:opacity .5s var(--ease-card)}
+.j-bg.show{opacity:.4}
+.j-dot{position:absolute;border-radius:50%;background:#442952;opacity:.1;z-index:2}
+/* topbar */
+.j-top{position:absolute;left:0;top:0;width:100%;height:98px;background:#2c877d;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:5px;padding:5px 15px 6px;z-index:15;backdrop-filter:blur(2.5px)}
+.j-top .back{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.j-top .back svg{width:16px;height:16px;stroke:#fff}
+.j-top .mid{flex:1;display:flex;flex-direction:column;gap:5px}
+.j-top .t1{font-family:var(--font);font-weight:600;font-size:16px;color:#fff}
+.j-top .t2{font-family:var(--font);font-size:14px;color:#fff}
+.j-top .t2 b{font-weight:700}
+.j-prog{position:relative;width:254px;height:7px;border-radius:50px;background:#c6e0dd;margin-top:1px}
+.j-prog i{position:absolute;left:0;top:0;height:7px;border-radius:50px;background:linear-gradient(90deg,#0d8482,#26b9ec);transition:width .4s var(--ease-card)}
+.j-streak{display:flex;align-items:center;gap:8px;padding:7px 13px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(2px);flex-shrink:0}
+.j-streak span{font-family:var(--font);font-weight:600;font-size:14px;color:#fff;letter-spacing:.28px}
+.j-streak svg{width:11px;height:13px}
+/* active phase card */
+.j-stage{position:absolute;left:16px;right:16px;top:521px;display:flex;flex-direction:column;gap:20px;z-index:10}
+.j-card{position:relative;border:2px solid #2e8278;border-radius:32px;padding:18px;overflow:hidden;background:linear-gradient(108deg,#00624a 0%,#00bbff 184%);box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+.j-card .glow{position:absolute;inset:-41px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.j-card>*{position:relative;z-index:2}
+.j-faselbl{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.j-faselbl .d{width:8px;height:8px;border-radius:50%;background:#fff}
+.j-faselbl span{font-family:var(--font);font-weight:700;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#d1d5db}
+.j-cardrow{display:flex;align-items:flex-end;justify-content:space-between}
+.j-cname{font-family:var(--font);font-weight:700;font-size:22px;line-height:36px;color:#fff}
+.j-cdesc{font-family:var(--font);font-weight:400;font-size:14px;line-height:20px;color:#d1d5db}
+.j-play{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;box-shadow:0 20px 25px -5px rgba(0,0,0,.1);text-decoration:none;flex-shrink:0}
+.j-play svg{width:20px;height:20px;fill:#fff}
+.j-chips{display:flex;gap:11px}
+.j-chip{flex:1;height:66px;border-radius:16px;display:flex;align-items:center;gap:12px;padding:0 9px;border:1px solid rgba(255,255,255,.1);background:rgba(74,74,74,.4);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer;transition:transform .15s var(--ease-card)}
+.j-chip:active{transform:scale(.96)}
+.j-chip.done{background:#357971}
+.j-chip .badge{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.11);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.j-chip.done .badge{width:24px;height:24px;background:rgba(34,197,94,.2);border:1px solid rgba(74,222,128,.3)}
+.j-chip .badge svg{width:13px;height:13px;stroke:rgba(255,255,255,.9)}
+.j-chip.done .badge svg{width:14px;height:14px;stroke:#4ade80}
+.j-chip span{font-family:var(--font);font-weight:700;font-size:15px;letter-spacing:-.37px;color:rgba(255,255,255,.88)}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#90c1a5}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#90c1a5;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-j">
+<img class="j-bg" id="bgFace"   src="assets/jornada-face.png"   alt=""/>
+<img class="j-bg" id="bgHeart"  src="assets/jornada-heart.png"  alt=""/>
+<img class="j-bg" id="bgFlower" src="assets/jornada-flower.png" alt=""/>
+<img class="j-bg" id="bgBrain"  src="assets/jornada-brain.png"  alt=""/>
+<div class="j-dot" style="left:32px;top:466px;width:14px;height:14px"></div>
+<div class="j-dot" style="left:39px;top:754px;width:23px;height:23px"></div>
+
+<div class="j-top">
+  <a class="back" href="jornada.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
+  <div class="mid">
+    <p class="t1">Sua jornada</p>
+    <p class="t2">Capítulo atual: <b id="chapter">Nomear</b></p>
+    <div class="j-prog"><i id="progBar" style="width:39px"></i></div>
+  </div>
+  <div class="j-streak"><span>1</span><svg viewBox="0 0 24 24" fill="#ffb020"><path d="M12 2c1 3-1 4-2 6s0 4 2 4 3-2 2-5c2 1 4 4 4 7a6 6 0 0 1-12 0c0-3 2-5 3-7 1 2 2 2 3 1-1-2-3-3-3-6 0 0 0 0 0 0z"/></svg></div>
+</div>
+
+<div class="j-stage">
+  <div class="j-card">
+    <div class="glow"></div>
+    <div class="j-faselbl"><span class="d"></span><span id="faseLbl">FASE 1</span></div>
+    <div class="j-cardrow">
+      <div>
+        <p class="j-cname" id="faseName">Nomear</p>
+        <p class="j-cdesc">Continue sua evolução</p>
+      </div>
+      <a class="j-play" href="jornada-detalhe.html"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></a>
+    </div>
+  </div>
+  <div class="j-chips" id="chips"></div>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+
+<script>
+(function(){
+  var phases = [
+    {name:'Nomear',     bg:'bgFace',   prog:39},
+    {name:'Compreender',bg:'bgHeart',  prog:120},
+    {name:'Transformar',bg:'bgFlower', prog:190},
+    {name:'Expandir',   bg:'bgBrain',  prog:240}
+  ];
+  var current = 0;
+  var bgs = {bgFace:document.getElementById('bgFace'),bgHeart:document.getElementById('bgHeart'),bgFlower:document.getElementById('bgFlower'),bgBrain:document.getElementById('bgBrain')};
+  var faseLbl=document.getElementById('faseLbl'), faseName=document.getElementById('faseName'),
+      chapter=document.getElementById('chapter'), progBar=document.getElementById('progBar'), chips=document.getElementById('chips');
+  var lockSvg='<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+  var checkSvg='<svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17l9-10"/></svg>';
+
+  function render(){
+    var p = phases[current];
+    faseLbl.textContent = 'FASE '+(current+1);
+    faseName.textContent = p.name;
+    chapter.textContent = p.name;
+    progBar.style.width = p.prog+'px';
+    Object.keys(bgs).forEach(function(k){ bgs[k].classList.toggle('show', k===p.bg); });
+    chips.innerHTML = '';
+    phases.forEach(function(ph,i){
+      if(i===current) return;
+      var done = i < current;
+      var el = document.createElement('div');
+      el.className = 'j-chip'+(done?' done':'');
+      el.innerHTML = '<div class="badge">'+(done?checkSvg:lockSvg)+'</div><span>Fase '+(i+1)+'</span>';
+      el.addEventListener('click', function(){ current=i; render(); });
+      chips.appendChild(el);
+    });
+  }
+  render();
+})();
+</script>
+</div></body></html>

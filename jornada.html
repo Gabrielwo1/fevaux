@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Sua Jornada</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-j{background:#fffbfb}
+.j-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+.j-veil{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,251,251,.30),rgba(255,251,251,.58))}
+.j-topo{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.35}
+.j-dot{position:absolute;border-radius:50%;background:#442952;opacity:.1;z-index:1}
+.j-head{position:absolute;left:22px;top:61px;width:346px;display:flex;flex-direction:column;gap:8px;z-index:5}
+.j-marker{display:flex;align-items:center;gap:8px;font-family:var(--font);font-weight:700;font-size:16px;color:#2b877c}
+.j-marker svg{width:18px;height:14px;stroke:#2b877c}
+.j-title{font-family:var(--font);font-weight:600;font-size:22px;line-height:1.25;color:#023e44}
+.j-sub{font-family:var(--font);font-weight:400;font-size:16px;color:#023e44;opacity:.5}
+.j-path{position:absolute;inset:0;z-index:2;pointer-events:none}
+.jp{position:absolute;height:66px;width:118px;border-radius:16px;display:flex;align-items:center;gap:12px;padding:0 12px;z-index:3;text-decoration:none;transition:transform .15s var(--ease-card)}
+.jp:active{transform:scale(.97)}
+.jp .ic{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.11);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.jp .ic svg{width:13px;height:13px;stroke:rgba(255,255,255,.9)}
+.jp span{font-family:var(--font);font-weight:700;font-size:15px;letter-spacing:-.37px;color:rgba(255,255,255,.88)}
+.jp.locked{background:rgba(74,74,74,.4);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);box-shadow:0 0 0 1px rgba(255,255,255,.05)}
+.jp.active{background:linear-gradient(112deg,#03766a 2%,#0391a2 120%);justify-content:center;box-shadow:0 10px 24px rgba(3,145,162,.35)}
+.jp.active .pic{width:9px;height:11px}
+.bottomnav{position:absolute;left:0;right:0;bottom:0;background:#2e8278;border-radius:12px 12px 0 0;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:20;overflow:hidden}
+.bottomnav .navglow{position:absolute;inset:-39px;border-radius:9999px;background:rgba(20,184,166,.1);filter:blur(32px);pointer-events:none}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;position:relative;z-index:2}
+.nav-item svg{width:20px;height:22px;display:block;stroke:#90c1a5}
+.nav-item span{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;color:#90c1a5;letter-spacing:1.2px}
+.nav-item .feva-ico{width:22px;height:22px;display:block;opacity:.55}.nav-item.active .feva-ico{opacity:1}.nav-item.active svg{stroke:#fff}
+.nav-item.active span{color:#fff}
+</style></head><body><div class="shell shell-j">
+<video class="j-video" autoplay muted loop playsinline poster="assets/jornada-bg-poster.jpg">
+  <source src="assets/jornada-bg.mp4" type="video/mp4"/>
+  <source src="assets/jornada-bg.webm" type="video/webm"/>
+</video>
+<div class="j-veil"></div>
+<svg class="j-topo" viewBox="0 0 390 852" preserveAspectRatio="none">
+  <g fill="none" stroke="#2b877c" stroke-width="1" opacity=".25">
+    <path d="M-20 180 C80 120 150 240 260 180 S420 120 460 200"/>
+    <path d="M-20 240 C80 180 160 300 270 240 S420 180 460 260"/>
+    <path d="M-20 420 C90 360 160 480 280 420 S430 360 470 440"/>
+    <path d="M-20 480 C90 420 170 540 290 480 S430 420 470 500"/>
+    <path d="M-20 660 C90 600 170 720 290 660 S430 600 470 680"/>
+  </g>
+</svg>
+<div class="j-dot" style="left:176px;top:738px;width:60px;height:60px;opacity:.06"></div>
+<div class="j-dot" style="left:39px;top:754px;width:23px;height:23px"></div>
+<div class="j-dot" style="left:64px;top:817px;width:14px;height:14px"></div>
+<div class="j-dot" style="left:32px;top:466px;width:14px;height:14px"></div>
+
+<div class="j-head">
+  <div class="j-marker"><svg viewBox="0 0 24 14" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2 2 7l6 5"/><path d="M2 7h20"/></svg>Sua Jornada</div>
+  <p class="j-title">Avance sua jornada e descubra seus sentimentos!</p>
+  <p class="j-sub">Um pequeno passo pode fazer diferença.</p>
+</div>
+
+<svg class="j-path" viewBox="0 0 390 852" preserveAspectRatio="none">
+  <path d="M118 629 C200 600 240 580 290 544 C200 480 150 430 95 398 C180 360 250 350 310 326"
+        fill="none" stroke="#2b877c" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round" opacity=".5"/>
+</svg>
+
+<a class="jp active" href="jornada-fase.html" style="left:62px;top:596px">
+  <svg class="pic" viewBox="0 0 12 14" fill="#fff"><path d="M0 0l12 7-12 7z"/></svg>
+  <span>Fase 1</span>
+</a>
+<div class="jp locked" style="left:234px;top:511px">
+  <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+  <span>Fase 2</span>
+</div>
+<div class="jp locked" style="left:39px;top:365px">
+  <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+  <span>Fase 3</span>
+</div>
+<div class="jp locked" style="left:254px;top:293px">
+  <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+  <span>Fase 4</span>
+</div>
+
+<nav class="bottomnav">
+  <div class="navglow"></div>
+  <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg><span>Início</span></a>
+  <a href="jornada.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg><span>Jornada</span></a>
+  <a href="feva.html" class="nav-item"><img class="feva-ico" src="assets/feva-icon.png" alt=""/><span>Feva</span></a>
+  <a href="explorar.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-4 1 2-5 4-1Z"/></svg><span>Explorar</span></a>
+  <a href="perfil.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Eu</span></a>
+</nav>
+<script>
+(function(){
+  var v = document.querySelector('.j-video');
+  if(!v) return;
+  v.muted = true; v.defaultMuted = true; v.loop = true; v.playsInline = true;
+  v.setAttribute('muted',''); v.setAttribute('playsinline','');
+  function play(){ var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+  v.addEventListener('loadeddata', play);
+  v.addEventListener('canplay', play);
+  v.addEventListener('ended', function(){ v.currentTime = 0; play(); });
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden) play(); });
+  ['click','touchstart','pointerdown'].forEach(function(e){
+    document.addEventListener(e, play, {once:true, passive:true});
+  });
+  play();
+})();
+</script>
+</div></body></html>

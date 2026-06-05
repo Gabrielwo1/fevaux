@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva – Etapa 11</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-light{background:#f7f7f9}
+.t-title{position:absolute;left:26px;top:108px;width:344px;font-family:var(--font);font-weight:600;font-size:22px;line-height:1.3;color:#023e44;z-index:5}
+.t-list{position:absolute;left:26px;right:26px;top:200px;display:flex;flex-direction:column;gap:14px;z-index:5}
+.t-opt{display:flex;align-items:center;gap:16px;background:#fff;border:1.5px solid transparent;border-radius:18px;padding:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:border-color .2s var(--ease-card),box-shadow .2s,transform .12s}
+.t-opt:active{transform:scale(.99)}
+.t-opt .ic{width:30px;height:30px;border-radius:9999px;background:#eef5f3;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.t-opt .ic svg{width:17px;height:17px;stroke:#13919d}
+.t-opt .lbl{flex:1;font-family:var(--font);font-weight:500;font-size:16px;color:#374151}
+.t-opt .chk{width:20px;height:20px;stroke:#13919d;opacity:0;transition:opacity .2s}
+.t-opt.sel{border-color:#2e8278;box-shadow:0 6px 18px rgba(46,130,120,.14)}
+.t-opt.sel .chk{opacity:1}
+.btn.dis{filter:grayscale(.5);opacity:.55;pointer-events:none;box-shadow:none}
+</style></head><body><div class="shell shell-light">
+<div class="prog-bg"></div><div class="prog-fill" style="width:213px"></div>
+<div class="topbar"><span class="etapa">Etapa 11</span><a href="teste-tensao.html" class="back-btn"><img src="assets/back-icon.svg" alt=""/></a></div>
+<h1 class="t-title anim-up d1">Muitas vezes penso demais ou fico remoendo situações</h1>
+<div class="t-list anim-up d2" data-single>
+  <button class="t-opt"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5 11 15l4.5-5.5"/></svg></span><span class="lbl">Concordo totalmente</span><svg class="chk" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></button>
+  <button class="t-opt"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17l9-10"/></svg></span><span class="lbl">Concordo um pouco</span><svg class="chk" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></button>
+  <button class="t-opt"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7 7 17"/></svg></span><span class="lbl">Discordo um pouco</span><svg class="chk" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></button>
+  <button class="t-opt"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg></span><span class="lbl">Discordo totalmente</span><svg class="chk" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19.5 7"/></svg></button>
+</div>
+<div class="btn-wrap"><a href="teste-pesos.html" class="btn dis" id="cta"><span>Continuar</span><img class="arr" src="assets/arrow.svg" alt=""/></a></div>
+<script>
+(function(){var cta=document.getElementById('cta');document.querySelectorAll('.t-list[data-single] .t-opt').forEach(function(o,_,all){o.addEventListener('click',function(){all.forEach(function(x){x.classList.remove('sel')});o.classList.add('sel');cta.classList.remove('dis')})})})();
+</script>
+</div></body></html>
