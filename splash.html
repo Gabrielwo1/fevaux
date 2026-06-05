@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feva</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/design-system.css"><style>
+.shell-splash{background:linear-gradient(180deg,rgba(37,199,177,.05),rgba(0,101,110,.05) 48%,rgba(151,49,161,.05) 100%),#fff}
+.sp-video{position:absolute;left:-49px;top:-8px;width:496px;height:864px;object-fit:cover;z-index:1;pointer-events:none}
+.sp-veil{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.25),rgba(255,255,255,.1) 45%,rgba(255,255,255,.45))}
+.sp-logo{position:absolute;left:50%;top:104px;transform:translateX(-50%);width:122px;z-index:3;animation:spFade 1s ease-out both}
+.sp-logo img{width:100%;display:block}
+.sp-text{position:absolute;left:50%;top:558px;transform:translateX(-50%);width:318px;text-align:center;font-family:var(--font);font-weight:600;font-size:28px;line-height:1.178;color:#023e44;z-index:3;animation:spFade 1.1s ease-out .3s both}
+.sp-text .g{color:#2e8278}
+@keyframes spFade{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+</style></head><body><div class="shell shell-splash">
+<video class="sp-video" id="spv" autoplay muted playsinline preload="auto">
+  <source src="assets/splash-bg.mp4" type="video/mp4"/>
+</video>
+<div class="sp-veil"></div>
+<div class="sp-logo"><img src="assets/feva-logo.png" alt="FEVA"/></div>
+<p class="sp-text">Quando vc se observa <span class="g">a transformação começa!</span></p>
+<script>
+(function(){
+  var v=document.getElementById('spv');
+  if(v){v.muted=true;v.play&&v.play().catch(function(){});}
+  setTimeout(function(){ window.location.href='home.html'; }, 5000);
+})();
+</script>
+</div></body></html>
